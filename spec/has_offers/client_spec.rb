@@ -13,4 +13,7 @@ describe HasOffers::Client::Config do
   its(:network_id)    { should == "NETID" }
   its(:network_token) { should == "NETTOKEN" }
   its(:base_uri)      { should == "https://api.hasoffers.com/Api" }
+  its(:version)       { should == "2" }
+  its(:format)        { should == "json" }
+  its(:service)       { should == "HasOffers" }
 end
