@@ -15,6 +15,10 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = HasOffers::VERSION
 
+  gem.add_dependency("relax", "~> 0.2.2")
+  gem.add_dependency("faraday", "~> 0.8.4")
+  gem.add_dependency("faraday_middleware", "~> 0.8.8")
+
   gem.add_development_dependency("rake", "~> 0.9.2")
   gem.add_development_dependency("rspec", "~> 2.11.0")
   gem.add_development_dependency("guard", "~> 1.2.1")
