@@ -17,3 +17,17 @@ describe HasOffers::Client::Config do
   its(:format)        { should == "json" }
   its(:service)       { should == "HasOffers" }
 end
+
+describe HasOffers::Client do
+  describe "#configure" do
+    it "supports block-style configuration" do
+      subject.configure do |config|
+        config.network_id    = "NETID"
+        config.network_token = "NETTOKEN"
+      end
+
+      subject.config.network_id.should    == "NETID"
+      subject.config.network_token.should == "NETTOKEN"
+    end
+  end
+end

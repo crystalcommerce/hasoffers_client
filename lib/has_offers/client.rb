@@ -17,5 +17,11 @@ module HasOffers
         @service = "HasOffers"
       end
     end
+
+    include ::Relax::Client
+
+    def config
+      @config ||= Config.new
+    end
   end
 end
