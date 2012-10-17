@@ -13,7 +13,7 @@ module HasOffers
       #TODO: offer a chunked version and a multi-page version
       #TODO: accept limit in the options
       def all
-        response = get('', {'page' => 1, 'limit' => 50, 'Method' => 'findAll'}).body
+        response = get('findAll', {'page' => 1, 'limit' => 50}).body
         if response.success?
           response.result = response.body['data'].map do |id, offer|
             HasOffers::Models::Offer.parse(offer)

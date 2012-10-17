@@ -14,7 +14,7 @@ module HasOffers
 
       def initialize(*)
         super
-        self.base_uri  = "https://api.hasoffers.com/Api"
+        self.base_uri  = "https://api.hasoffers.com"
         self.version ||= "2"
         self.logging = false if logging.nil?
         @service = "HasOffers"

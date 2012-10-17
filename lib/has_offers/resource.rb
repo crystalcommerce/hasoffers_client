@@ -26,6 +26,12 @@ module HasOffers
       end
     end
 
+    [:get, :post].each do |http_verb|
+      define_method(http_verb) do |has_offers_method, params, *args|
+        super('/Api', params.merge('Method' => has_offers_method), *args)
+      end
+    end
+
     # implement this in the resource class
     def target
       nil
