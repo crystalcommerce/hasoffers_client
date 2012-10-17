@@ -16,6 +16,14 @@ describe HasOffers::Client::Config do
   its(:version)       { should == "2" }
   its(:format)        { should == "json" }
   its(:service)       { should == "HasOffers" }
+
+  its(:params) { should == {
+    'Service'      => 'HasOffers',
+    'Version'      => '2',
+    'NetworkId'    => 'NETID',
+    'NetworkToken' => 'NETTOKEN',
+    'Format'       => 'json'
+  }}
 end
 
 describe HasOffers::Client do

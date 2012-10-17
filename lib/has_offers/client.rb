@@ -16,6 +16,16 @@ module HasOffers
         self.format  ||= "json"
         @service = "HasOffers"
       end
+
+      def params
+        {
+          'Service'      => service,
+          'Version'      => version,
+          'NetworkId'    => network_id,
+          'NetworkToken' => network_token,
+          'Format'       => format
+        }
+      end
     end
 
     include ::Relax::Client
