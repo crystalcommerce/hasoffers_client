@@ -14,8 +14,9 @@ describe HasOffers::Client::Config do
   its(:network_token) { should == "NETTOKEN" }
   its(:base_uri)      { should == "https://api.hasoffers.com/Api" }
   its(:version)       { should == "2" }
-  its(:format)        { should == "json" }
+  its(:format)        { should == :json }
   its(:service)       { should == "HasOffers" }
+  its(:user_agent)    { should == "hasoffers_client #{HasOffers::VERSION}" }
 
   its(:params) { should == {
     'Service'      => 'HasOffers',
