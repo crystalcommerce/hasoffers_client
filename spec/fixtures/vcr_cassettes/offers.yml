@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.hasoffers.com/Api/findAll?Format=json&NetworkId=<HAS_OFFERS_NETWORK_ID>&NetworkToken=<HAS_OFFERS_NETWORK_TOKEN>&Service=HasOffers&Target=Offer&Version=2&limit=50&page=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - hasoffers_client 0.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 17 Oct 2012 18:15:14 GMT
+      Server:
+      - Apache/2.2.14 (Ubuntu)
+      X-Host:
+      - use-api-external1-a.hasservers.com
+      Content-Length:
+      - '189'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! ' {"response":{"errors":{"publicMessage":"IP 70.89.125.98 is not white-listed.
+        Please enable it in the application, Support => API"},"link":"http:\/\/www.hasoffers.com\/wiki\/Category:API"}}'
+    http_version: 
+  recorded_at: Wed, 17 Oct 2012 18:21:14 GMT
+recorded_with: VCR 2.2.5

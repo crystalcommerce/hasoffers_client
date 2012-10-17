@@ -15,6 +15,9 @@ describe HasOffers::Client::Config do
   its(:base_uri)      { should == "https://api.hasoffers.com/Api" }
   its(:version)       { should == "2" }
   its(:format)        { should == :json }
+  its(:logging)       { should be_false }
+  its(:logging?)      { should be_false }
+  its(:logger)        { should be_nil }
   its(:service)       { should == "HasOffers" }
   its(:user_agent)    { should == "hasoffers_client #{HasOffers::VERSION}" }
 
@@ -25,6 +28,24 @@ describe HasOffers::Client::Config do
     'NetworkToken' => 'NETTOKEN',
     'Format'       => 'json'
   }}
+
+  context "logging specified" do
+    before(:each) do
+      config.logging = true
+    end
+
+    its(:logging)  { should be_true }
+    its(:logging?) { should be_true }
+
+    context "logger specified" do
+      let(:logger) { stub }
+      before(:each) do
+        config.logger = logger
+      end
+
+      its(:logger) { should == logger }
+    end
+  end
 end
 
 describe HasOffers::Client do

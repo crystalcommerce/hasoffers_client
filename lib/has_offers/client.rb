@@ -8,6 +8,7 @@ module HasOffers
       attr_accessor :version
       attr_accessor :format
       attr_accessor :logging
+      attr_accessor :logger
       attr_reader   :service
 
       def initialize(*)
