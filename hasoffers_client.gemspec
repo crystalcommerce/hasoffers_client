@@ -26,7 +26,6 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency("pry-nav", "~> 0.2.2")
   gem.add_development_dependency("rake", "~> 0.9.2")
   #TODO: temporary dependency
-  gem.add_development_dependency("rash", "~> 0.3.2")
   gem.add_development_dependency("rb-inotify", "~> 0.8.8")
   gem.add_development_dependency("rspec", "~> 2.11.0")
   gem.add_development_dependency("vcr", "~> 2.2.5")

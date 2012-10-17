@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.hasoffers.com/Api/findAll?Format=json&NetworkId=<HAS_OFFERS_NETWORK_ID>&NetworkToken=<HAS_OFFERS_NETWORK_TOKEN>&Service=HasOffers&Target=Offer&Version=2&limit=50&page=1
+    uri: https://api.hasoffers.com/Api?Format=json&Method=findAll&NetworkId=<HAS_OFFERS_NETWORK_ID>&NetworkToken=<HAS_OFFERS_NETWORK_TOKEN>&Service=HasOffers&Target=Offer&Version=2&limit=50&page=1
     body:
       encoding: US-ASCII
       string: ''
@@ -21,19 +21,19 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 17 Oct 2012 18:15:14 GMT
+      - Wed, 17 Oct 2012 22:01:58 GMT
       Server:
       - Apache/2.2.14 (Ubuntu)
       X-Host:
       - use-api-external1-a.hasservers.com
       Content-Length:
-      - '189'
+      - '2003'
       Connection:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! ' {"response":{"errors":{"publicMessage":"IP 70.89.125.98 is not white-listed.
-        Please enable it in the application, Support => API"},"link":"http:\/\/www.hasoffers.com\/wiki\/Category:API"}}'
+      string: ! ' {"request":{"Target":"Offer","Format":"json","Service":"HasOffers","Version":"2","NetworkId":"<HAS_OFFERS_NETWORK_ID>","NetworkToken":"<HAS_OFFERS_NETWORK_TOKEN>","page":"1","limit":"50","Method":"findAll"},"response":{"status":1,"data":{"page":"1","current":0,"count":1,"pageCount":1,"data":{"2":{"Offer":{"id":"2","advertiser_id":null,"name":"Arux
+        Blog","description":"","require_approval":"0","require_terms_and_conditions":0,"terms_and_conditions":null,"offer_url":"http:\/\/store.arux.net","preview_url":"http:\/\/store.arux.net","currency":null,"default_payout":"0.00","max_payout":"0.00","protocol":"server_affiliate","status":"active","expiration_date":"2015-01-01","is_private":"0","conversion_cap":"0","redirect_offer_id":null,"converted_offer_id":null,"percent_payout":"2.50","session_hours":"24","session_impression_hours":"24","converted_offer_url":null,"payout_type":"cpa_percentage","revenue_type":"cpa_flat","tiered_payout":"0","tiered_revenue":"0","converted_offer_type":null,"allow_multiple_conversions":"0","allow_website_links":"0","allow_direct_links":"0","show_custom_variables":"0","approve_conversions":"0","max_percent_payout":null,"set_session_on_impression":0,"display_advertiser":"0","enforce_geo_targeting":"0","show_mail_list":"0","dne_list_id":null,"dne_unsubscribe_url":null,"dne_download_url":null,"email_instructions":"0","email_instructions_from":null,"email_instructions_subject":null,"conversion_ratio_threshold":null,"featured":null,"is_subscription":"0","subscription_duration":null,"customer_list_id":"0","is_seo_friendly_301":"0","subscription_frequency":null,"rating":null,"ref_id":null,"modified":1349923175,"is_expired":"0","disable_click_macro":"0","click_macro_url":null,"hostname_id":null,"has_goals_enabled":"0","enforce_encrypt_tracking_pixels":"0","default_goal_name":null,"enable_offer_whitelist":"0","note":"","monthly_conversion_cap":"0","payout_cap":"0.00","monthly_payout_cap":"0.00","revenue_cap":"0.00","monthly_revenue_cap":"0.00"}}}},"errors":[]}}'
     http_version: 
-  recorded_at: Wed, 17 Oct 2012 18:21:14 GMT
+  recorded_at: Wed, 17 Oct 2012 22:02:15 GMT
 recorded_with: VCR 2.2.5

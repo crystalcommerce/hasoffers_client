@@ -1,4 +1,5 @@
 require 'relax'
+require 'has_offers/resources/offer'
 
 module HasOffers
   class Client
@@ -6,18 +7,18 @@ module HasOffers
       attr_accessor :network_id
       attr_accessor :network_token
       attr_accessor :version
-      attr_accessor :format
       attr_accessor :logging
       attr_accessor :logger
+      attr_reader   :format
       attr_reader   :service
 
       def initialize(*)
         super
         self.base_uri  = "https://api.hasoffers.com/Api"
         self.version ||= "2"
-        self.format  ||= :json
         self.logging = false if logging.nil?
         @service = "HasOffers"
+        @format  = :json
       end
 
       def params

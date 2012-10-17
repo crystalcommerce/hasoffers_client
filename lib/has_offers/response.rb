@@ -1,9 +1,10 @@
 module HasOffers
   class Response
-    attr_reader :result
+    attr_reader   :body
+    attr_accessor :result
 
-    def initialize(result, errors = [])
-      @result = result
+    def initialize(body, errors = [])
+      @body   = body
       @errors = errors
     end
 

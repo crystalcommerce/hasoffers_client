@@ -15,14 +15,14 @@ module HasOffers
         builder.request(:has_offers_target_injector, target)
         builder.request(config.format)
 
+
+        #response middleware is in reverse order?
+
+        builder.response(:has_offers_response_parser)
         builder.response(config.format)
 
         # middleware will default to stdout if not specified
         builder.response(:logger, config.logger) if config.logging?
-
-        #TODO: body unwrapper, error handling
-        #TODO: instead define a parser, this is the lazy man's version of that
-        builder.response(:rashify)
       end
     end
 

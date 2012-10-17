@@ -1,4 +1,5 @@
 require 'vcr'
+require 'pry'
 Dir[File.dirname(__FILE__) + "/support/**/*.rb"].each {|f| require f}
 
 VCR.configure do |c|

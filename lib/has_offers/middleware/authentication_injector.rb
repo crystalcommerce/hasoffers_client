@@ -1,3 +1,5 @@
+require "has_offers/middleware/parameter_injector"
+
 module HasOffers
   module Middleware
     class AuthenticationInjector < ParameterInjector

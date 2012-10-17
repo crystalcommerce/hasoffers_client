@@ -4,14 +4,14 @@ require 'has_offers/response'
 module HasOffers
   describe Response do
     let(:errors) { [] }
-    let(:result) { mock }
+    let(:body) { mock }
 
-    subject { Response.new(result, errors) }
+    subject { Response.new(body, errors) }
 
     context "no errors" do
       it { should be_successful }
-      its(:errors) { should == [] }
-      its(:result) { should == result }
+      its(:errors) { should == []   }
+      its(:body)   { should == body }
     end
 
     context "has errors" do
@@ -19,7 +19,7 @@ module HasOffers
 
       it { should_not be_successful }
       its(:errors) { should == errors }
-      its(:result) { should == result }
+      its(:body)   { should == body   }
     end
   end
 end

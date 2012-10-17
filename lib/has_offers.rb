@@ -1,5 +1,3 @@
-require "has_offers/version"
-require "has_offers/client"
 require "relax"
 
 module HasOffers
@@ -9,3 +7,6 @@ module HasOffers
     @client ||= Client.new
   end
 end
+
+require "has_offers/version"
+require "has_offers/client"
