@@ -25,4 +25,6 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency("guard-rspec", "~> 1.1.0")
   gem.add_development_dependency("fivemat", "~> 1.1.0")
   gem.add_development_dependency("rb-inotify", "~> 0.8.8")
+  gem.add_development_dependency("webmock", "~> 1.8.11")
+  gem.add_development_dependency("vcr", "~> 2.2.5")
 end
