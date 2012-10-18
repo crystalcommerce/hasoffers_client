@@ -16,7 +16,7 @@ describe "offers", :vcr => {:cassette_name => "offers"} do
       offer = offers.first
       offer.id.should == "2"
       offer.name.should == "Arux Blog"
-      offer.percent_payout.should == "2.50"
+      offer.percent_payout.should == BigDecimal.new("2.50")
     end
   end
 

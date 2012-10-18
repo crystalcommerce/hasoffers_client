@@ -74,23 +74,28 @@ module HasOffers
         end
 
         def boolean_property(name, options = {})
+          boolean_properties << name
           property(name,
                    options.merge(:transform_with => ->(x) {to_bool(x)}))
         end
 
         def decimal_property(name, options = {})
           property(name,
-                   options.merge(:transform_with => ->(x){to_decimal(x)}))
+                   options.merge(:transform_with => ->(x){x && to_decimal(x)}))
         end
 
         def datetime_property(name, options = {})
           property(name,
-                   options.merge(:transform_with => ->(x){to_datetime(x)}))
+                   options.merge(:transform_with => ->(x){x && to_datetime(x)}))
         end
 
         def date_property(name, options = {})
           property(name,
-                   options.merge(:transform_with => ->(x){to_date(x)}))
+                   options.merge(:transform_with => ->(x){x && to_date(x)}))
+        end
+
+        def boolean_properties
+          @boolean_properties ||= Set.new
         end
 
       private
@@ -119,6 +124,12 @@ module HasOffers
           Date.parse(val)
         end
       end
+    private
+
+      # Just skip if a miss, don't raise
+      def property_exists?(property)
+        self.class.properties.include?(property.to_sym)
+      end
     end
 
     module ClassMethods
@@ -127,6 +138,10 @@ module HasOffers
 
         parser_klass.properties.each do |property|
           attr_accessor property
+        end
+
+        parser_klass.boolean_properties.each do |property|
+          alias_method "#{property}?", property
         end
 
         define_singleton_method(:parse) do |json|
