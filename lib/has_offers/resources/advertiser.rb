@@ -9,7 +9,7 @@ module HasOffers
         'Advertiser'
       end
 
-      def signup
+      def signup(advertiser_signup)
         #TODO
       end
     end

@@ -1,5 +1,6 @@
 require 'relax'
 require 'has_offers/resources/offer'
+require 'has_offers/resources/advertiser'
 
 module HasOffers
   class Client
@@ -46,6 +47,10 @@ module HasOffers
 
     def offers
       Resources::Offer.new(self)
+    end
+
+    def advertisers
+      Resources::Advertiser.new(self)
     end
   end
 end
