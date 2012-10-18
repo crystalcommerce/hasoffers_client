@@ -13,6 +13,23 @@ module HasOffers
       attr_accessor :first_name
       attr_accessor :last_name
       attr_accessor :password
+
+      def to_hash
+        {
+          "company"    => company,
+          "city"       => city,
+          "phone"      => phone,
+          "region"     => region,
+          "address1"   => address1,
+          "address2"   => address2,
+          "country"    => country,
+          "zipcode"    => zipcode,
+          "email"      => email,
+          "first_name" => first_name,
+          "last_name"  => last_name,
+          "password"   => password
+        }
+      end
     end
   end
 end

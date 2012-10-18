@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.hasoffers.com/Api?Format=json&NetworkId=<HAS_OFFERS_NETWORK_ID>&NetworkToken=<HAS_OFFERS_NETWORK_TOKEN>&Service=HasOffers&Target=Advertiser&Version=2
+    body:
+      encoding: UTF-8
+      string: ! '{"company":"Example Store","city":"Seattle","phone":"111-111-1111","region":"WA","address1":"123
+        Fake St","address2":"Suite B","country":"US","zipcode":"98043","email":"joe@example.com","first_name":"Joe","last_name":"Blow","password":"ysxwxfwsnyxwfqsxyw","Method":"signup"}'
+    headers:
+      User-Agent:
+      - hasoffers_client 0.0.1
+      Content-Type:
+      - application/json
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 18 Oct 2012 22:56:02 GMT
+      Server:
+      - Apache/2.2.14 (Ubuntu)
+      X-Host:
+      - use-api-external1-a.hasservers.com
+      Content-Length:
+      - '249'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! ' {"request":{"Target":"Advertiser","Format":"json","Service":"HasOffers","Version":"2","NetworkId":"<HAS_OFFERS_NETWORK_ID>","NetworkToken":"<HAS_OFFERS_NETWORK_TOKEN>"},"response":{"status":-1,"data":"","errors":[{"publicMessage":"Unknown
+        method: "}]}}'
+    http_version: 
+  recorded_at: Thu, 18 Oct 2012 23:02:04 GMT
+recorded_with: VCR 2.2.5
