@@ -22,10 +22,10 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency("fivemat", "~> 1.1.0")
   gem.add_development_dependency("guard", "~> 1.2.1")
   gem.add_development_dependency("guard-rspec", "~> 1.1.0")
+  gem.add_development_dependency("hashie", "~> 1.2.0")
   gem.add_development_dependency("pry", "~> 0.9.10")
   gem.add_development_dependency("pry-nav", "~> 0.2.2")
   gem.add_development_dependency("rake", "~> 0.9.2")
-  #TODO: temporary dependency
   gem.add_development_dependency("rb-inotify", "~> 0.8.8")
   gem.add_development_dependency("rspec", "~> 2.11.0")
   gem.add_development_dependency("vcr", "~> 2.2.5")
