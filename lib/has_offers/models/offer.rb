@@ -2,7 +2,6 @@ require 'has_offers/parser'
 
 module HasOffers
   module Models
-    #TODO: dont do this
     class Offer
       include HasOffers::Parser
 

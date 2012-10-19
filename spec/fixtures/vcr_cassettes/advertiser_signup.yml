@@ -2,16 +2,15 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.hasoffers.com/Api?Format=json&NetworkId=<HAS_OFFERS_NETWORK_ID>&NetworkToken=<HAS_OFFERS_NETWORK_TOKEN>&Service=HasOffers&Target=Advertiser&Version=2
+    uri: https://api.hasoffers.com/Api
     body:
-      encoding: UTF-8
-      string: ! '{"company":"Example Store","city":"Seattle","phone":"111-111-1111","region":"WA","address1":"123
-        Fake St","address2":"Suite B","country":"US","zipcode":"98043","email":"joe@example.com","first_name":"Joe","last_name":"Blow","password":"ysxwxfwsnyxwfqsxyw","Method":"signup"}'
+      encoding: US-ASCII
+      string: account%5Bcompany%5D=Example+Store&account%5Bcity%5D=Seattle&account%5Bphone%5D=111-111-1111&account%5Bregion%5D=WA&account%5Baddress1%5D=123+Fake+St&account%5Baddress2%5D=Suite+B&account%5Bcountry%5D=US&account%5Bzipcode%5D=98043&user%5Bemail%5D=joe%40example.com&user%5Bfirst_name%5D=Joe&user%5Blast_name%5D=Blow&user%5Bpassword%5D=xxxxxxxxxx&user%5Bpassword_confirmation%5D=xxxxxxxxxx&Method=signup&Service=HasOffers&Version=2&NetworkId=<HAS_OFFERS_NETWORK_ID>&NetworkToken=<HAS_OFFERS_NETWORK_TOKEN>&Format=json&Target=Advertiser
     headers:
       User-Agent:
       - hasoffers_client 0.0.1
       Content-Type:
-      - application/json
+      - application/x-www-form-urlencoded
       Accept:
       - ! '*/*'
   response:
@@ -22,19 +21,23 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 18 Oct 2012 22:56:02 GMT
+      - Fri, 19 Oct 2012 20:18:14 GMT
       Server:
       - Apache/2.2.14 (Ubuntu)
       X-Host:
       - use-api-external1-a.hasservers.com
       Content-Length:
-      - '249'
+      - '1559'
       Connection:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! ' {"request":{"Target":"Advertiser","Format":"json","Service":"HasOffers","Version":"2","NetworkId":"<HAS_OFFERS_NETWORK_ID>","NetworkToken":"<HAS_OFFERS_NETWORK_TOKEN>"},"response":{"status":-1,"data":"","errors":[{"publicMessage":"Unknown
-        method: "}]}}'
+      string: ! '{"request":{"Target":"Advertiser","Format":"json","Service":"HasOffers","Version":"2","account":{"company":"Example
+        Store","city":"Seattle","phone":"111-111-1111","region":"WA","address1":"123
+        Fake St","address2":"Suite B","country":"US","zipcode":"98043"},"user":{"email":"joe@example.com","first_name":"Joe","last_name":"Blow","password":"xxxxxxxxxx","password_confirmation":"xxxxxxxxxx"},"Method":"signup","NetworkId":"<HAS_OFFERS_NETWORK_ID>","NetworkToken":"<HAS_OFFERS_NETWORK_TOKEN>"},"response":{"status":1,"data":{"AdvertiserUser":{"id":"4","user_id":null,"join_date":"2012-10-19
+        16:18:15","last_login":null,"advertiser_id":"2","permissions":"14155776","status":"active","wants_alerts":"1","modified":1350677895,"email":"joe@example.com","first_name":"Joe","last_name":"Blow","phone":null,"cell_phone":null,"title":null,"salt":"bkkgn9CxpJeyImr","is_creator":true,"access":["Advertiser","Advertiser.stats","Advertiser.account_management","Advertiser.offer_management","Advertiser.user_management"]},"Advertiser":{"date_added":"2012-10-19
+        16:18:14","status":"pending","id":"2","company":"Example Store","address1":"123
+        Fake St","address2":"Suite B","city":"Seattle","region":"WA","country":"US","other":null,"zipcode":"98043","phone":"111-111-1111","fax":null,"website":null,"wants_alerts":"1","account_manager_id":null,"signup_ip":null,"modified":-62169966000,"SHARED_Network_Map_id":null,"SHARED_Accounts_id":null,"ref_id":null,"network_brand_id":null,"network_affiliate_id":null,"network_affiliate_status":null,"network_brand_active":"1"}},"errors":[]}}'
     http_version: 
-  recorded_at: Thu, 18 Oct 2012 23:02:04 GMT
+  recorded_at: Fri, 19 Oct 2012 20:24:18 GMT
 recorded_with: VCR 2.2.5

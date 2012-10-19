@@ -1,13 +1,11 @@
 module HasOffers
   module Middleware
     class ParameterInjector < ::Faraday::Middleware
-      extend Forwardable
-      def_delegators :'Faraday::Utils', :parse_query, :build_query
+      #extend Forwardable
+      #def_delegators :'Faraday::Utils', :parse_query, :build_query
 
       def call(env)
-        new_params = param_overrides.update(query_params(env[:url]))
-
-        env[:url].query = build_query(new_params)
+        env[:body].merge!(param_overrides)
 
         @app.call(env)
       end
@@ -18,6 +16,7 @@ module HasOffers
         raise NotImplementedError
       end
 
+      #TODO: deprecated?
       def query_params(url)
         if url.query.nil? or url.query.empty?
           {}

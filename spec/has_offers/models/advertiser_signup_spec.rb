@@ -21,17 +21,22 @@ describe HasOffers::Models::AdvertiserSignup do
   end
 
   its(:to_hash) { should == {
-    "company"    => "COMPANY",
-    "city"       => "CITY",
-    "phone"      => "PHONE",
-    "region"     => "REGION",
-    "address1"   => "ADDRESS1",
-    "address2"   => "ADDRESS2",
-    "country"    => "COUNTRY",
-    "zipcode"    => "ZIPCODE",
-    "email"      => "EMAIL",
-    "first_name" => "FIRST_NAME",
-    "last_name"  => "LAST_NAME",
-    "password"   => "PASSWORD"
+    "account" => {
+      "company"    => "COMPANY",
+      "city"       => "CITY",
+      "phone"      => "PHONE",
+      "region"     => "REGION",
+      "address1"   => "ADDRESS1",
+      "address2"   => "ADDRESS2",
+      "country"    => "COUNTRY",
+      "zipcode"    => "ZIPCODE"
+    },
+    "user" => {
+      "email"                 => "EMAIL",
+      "first_name"            => "FIRST_NAME",
+      "last_name"             => "LAST_NAME",
+      "password"              => "PASSWORD",
+      "password_confirmation" => "PASSWORD"
+    }
   }}
 end

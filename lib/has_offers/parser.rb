@@ -115,9 +115,16 @@ module HasOffers
           BigDecimal.new(val)
         end
 
-        #TODO: see if there are other formats besides int :(
+        # date may look like 2012-10-19 16:18:15, which is localized to
+        # whatever you've configured for your network.
         def to_datetime(val)
-          Time.at(val)
+          case val
+          when String
+            Time.parse(val)
+          when Fixnum
+            Time.at(val)
+          else raise "Could not parse #{val.inspect} as Time"
+          end
         end
 
         def to_date(val)

@@ -3,7 +3,7 @@ require 'has_offers/resource'
 module HasOffers
   module Resources
     class Advertiser
-      SignupResult = Class.new(Struct.new(:user, :advertiser))
+      SignupResult = Class.new(Struct.new(:advertiser_user, :advertiser))
 
       include ::HasOffers::Resource
 
@@ -15,10 +15,9 @@ module HasOffers
         response = post('signup', advertiser_signup.to_hash).body
 
         if response.success?
-          data = response.body['data']
           # root elements coexist in one object
-          user = HasOffers::Models::AdvertiserUser.parse(data)
-          advertiser = HasOffers::Models::AdvertiserUser.parse(data)
+          user = HasOffers::Models::AdvertiserUser.parse(response.body)
+          advertiser = HasOffers::Models::Advertiser.parse(response.body)
           response.result = SignupResult.new(user, advertiser)
         end
 

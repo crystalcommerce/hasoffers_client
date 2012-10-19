@@ -19,7 +19,7 @@ describe "advertiser signup", :vcr => {:cassette_name => "advertiser_signup"} do
       signup.email      = "joe@example.com"
       signup.first_name = "Joe"
       signup.last_name  = "Blow"
-      signup.password   = "ysxwxfwsnyxwfqsxyw"
+      signup.password   = "xxxxxxxxxx"
     end
 
     it "is successful" do

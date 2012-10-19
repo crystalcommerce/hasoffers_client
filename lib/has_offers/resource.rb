@@ -13,6 +13,7 @@ module HasOffers
       super do |builder|
         builder.request(:has_offers_authentication_injector, config)
         builder.request(:has_offers_target_injector, target)
+        builder.request(:url_encoded)
         builder.request(config.format)
 
 
@@ -28,6 +29,7 @@ module HasOffers
 
     [:get, :post].each do |http_verb|
       define_method(http_verb) do |has_offers_method, params, *args|
+        pp params.merge('Method' => has_offers_method)
         super('/Api', params.merge('Method' => has_offers_method), *args)
       end
     end
