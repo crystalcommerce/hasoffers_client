@@ -20,4 +20,13 @@ describe "offers", :vcr => {:cassette_name => "offers"} do
     end
   end
 
+  describe "finding single offer" do
+    context "offer exists" do
+
+    end
+
+    context "offer does not exist" do
+
+    end
+  end
 end

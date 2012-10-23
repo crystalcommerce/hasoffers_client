@@ -7,6 +7,13 @@ VCR.configure do |c|
                                      'fixtures/vcr_cassettes')
   c.hook_into :webmock
   c.configure_rspec_metadata!
+  c.filter_sensitive_data("<HAS_OFFERS_NETWORK_ID>") do 
+    ENV.fetch('HAS_OFFERS_NETWORK_ID')
+  end
+
+  c.filter_sensitive_data("<HAS_OFFERS_NETWORK_TOKEN>") do
+    ENV.fetch('HAS_OFFERS_NETWORK_TOKEN')
+  end
 end
 
 RSpec.configure do |config|

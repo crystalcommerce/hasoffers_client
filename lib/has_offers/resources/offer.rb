@@ -22,6 +22,10 @@ module HasOffers
 
         response
       end
+
+      def find(id)
+
+      end
     end
   end
 end
