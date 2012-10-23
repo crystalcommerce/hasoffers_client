@@ -52,5 +52,9 @@ module HasOffers
     def advertisers
       Resources::Advertiser.new(self)
     end
+
+    def affiliates
+      Resources::Affiliate.new(self)
+    end
   end
 end
