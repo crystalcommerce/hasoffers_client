@@ -107,4 +107,41 @@ http_interactions:
       string: ! '{"request":{"Target":"Offer","Format":"json","Service":"HasOffers","Version":"2","id":"0","Method":"findById","NetworkId":"<HAS_OFFERS_NETWORK_ID>","NetworkToken":"<HAS_OFFERS_NETWORK_TOKEN>"},"response":{"status":1,"data":null,"errors":[]}}'
     http_version: 
   recorded_at: Tue, 23 Oct 2012 22:07:52 GMT
+- request:
+    method: post
+    uri: https://api.hasoffers.com/Api
+    body:
+      encoding: US-ASCII
+      string: data%5Bname%5D=Test+Offer&data%5Bdescription%5D=Just+a+Test&data%5Bpercent_payout%5D=0.35E1&data%5Boffer_url%5D=http%3A%2F%2Fexample.com%2Foffer&data%5Bpreview_url%5D=http%3A%2F%2Fexample.com%2Fpreview&data%5Badvertiser_id%5D=2&data%5Bprotocol%5D=http&data%5Bstatus%5D=pending&data%5Bexpiration_date%5D=2015-01-01&return_object=true&Method=create&Service=HasOffers&Version=2&NetworkId=<HAS_OFFERS_NETWORK_ID>&NetworkToken=<HAS_OFFERS_NETWORK_TOKEN>&Format=json&Target=Offer
+    headers:
+      User-Agent:
+      - hasoffers_client 0.0.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 23 Oct 2012 22:34:00 GMT
+      Server:
+      - Apache/2.2.14 (Ubuntu)
+      X-Host:
+      - use-api-external1-a.hasservers.com
+      Content-Length:
+      - '2205'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"request":{"Target":"Offer","Format":"json","Service":"HasOffers","Version":"2","data":{"name":"Test
+        Offer","description":"Just a Test","percent_payout":"0.35E1","offer_url":"http:\/\/example.com\/offer","preview_url":"http:\/\/example.com\/preview","advertiser_id":"2","protocol":"http","status":"pending","expiration_date":"2015-01-01"},"return_object":"true","Method":"create","NetworkId":"<HAS_OFFERS_NETWORK_ID>","NetworkToken":"<HAS_OFFERS_NETWORK_TOKEN>"},"response":{"status":1,"data":{"Offer":{"id":"4","advertiser_id":"2","name":"Test
+        Offer","description":"Just a Test","require_approval":"0","require_terms_and_conditions":0,"terms_and_conditions":null,"offer_url":"http:\/\/example.com\/offer","preview_url":"http:\/\/example.com\/preview","currency":null,"default_payout":"0.00","max_payout":"0.00","protocol":"http","status":"pending","expiration_date":"2015-01-01","is_private":"0","conversion_cap":"0","redirect_offer_id":null,"converted_offer_id":null,"percent_payout":"3.50","session_hours":"24","session_impression_hours":"24","converted_offer_url":null,"payout_type":"cpa_flat","revenue_type":"cpa_flat","tiered_payout":"0","tiered_revenue":"0","converted_offer_type":"","allow_multiple_conversions":"0","allow_website_links":"0","allow_direct_links":"0","show_custom_variables":"0","approve_conversions":null,"max_percent_payout":null,"set_session_on_impression":"0","display_advertiser":"0","enforce_geo_targeting":"0","show_mail_list":"0","dne_list_id":null,"dne_unsubscribe_url":null,"dne_download_url":null,"email_instructions":"0","email_instructions_from":null,"email_instructions_subject":null,"conversion_ratio_threshold":null,"featured":null,"is_subscription":"0","subscription_duration":null,"customer_list_id":null,"is_seo_friendly_301":"0","subscription_frequency":null,"rating":null,"ref_id":null,"modified":-62169966000,"is_expired":"0","disable_click_macro":"0","click_macro_url":null,"hostname_id":null,"has_goals_enabled":"0","enforce_encrypt_tracking_pixels":"1","default_goal_name":null,"enable_offer_whitelist":"0","note":"","monthly_conversion_cap":"0","payout_cap":"0.00","monthly_payout_cap":"0.00","revenue_cap":"0.00","monthly_revenue_cap":"0.00"}},"errors":[]}}'
+    http_version: 
+  recorded_at: Tue, 23 Oct 2012 22:40:12 GMT
 recorded_with: VCR 2.2.5

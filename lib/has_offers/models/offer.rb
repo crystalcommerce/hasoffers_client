@@ -83,6 +83,21 @@ module HasOffers
         decimal_property :revenue_cap
         decimal_property :monthly_revenue_cap
       end
+
+      #TODO: hook into property declaration
+      def to_hash
+        {
+          "name"           => name,
+          "description"    => description,
+          "percent_payout" => percent_payout,
+          "offer_url"      => offer_url,
+          "preview_url"    => preview_url,
+          "advertiser_id"  => advertiser_id,
+          "protocol"       => protocol,
+          "status"         => status,
+          "expiration_date" => expiration_date.strftime('%Y-%m-%d')
+        }
+      end
     end
   end
 end

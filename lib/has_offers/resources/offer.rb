@@ -33,6 +33,17 @@ module HasOffers
 
         response
       end
+
+      def create(new_offer)
+        response = post('create', {'data' => new_offer.to_hash,
+                                   'return_object' => true}).body
+
+        if response.success?
+          response.result = HasOffers::Models::Offer.parse(response.body)
+        end
+
+        response
+      end
     end
   end
 end
