@@ -23,8 +23,15 @@ module HasOffers
         response
       end
 
+      #TODO: variadic interface to find multiple?
       def find(id)
+        response = get('findById', {'id' => id}).body
 
+        if response.success?
+          response.result = HasOffers::Models::Offer.parse(response.body)
+        end
+
+        response
       end
     end
   end

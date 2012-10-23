@@ -14,7 +14,13 @@ module HasOffers
 
     private
       def extract_errors(response)
-        []
+        # UGH
+        if extract_body(response).nil?
+          ["Not found"]
+        else
+          #TODO: more parsing
+          []
+        end
       end
 
       def extract_body(response)
